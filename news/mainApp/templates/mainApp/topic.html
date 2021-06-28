@@ -1,0 +1,27 @@
+{% extends 'mainApp/wrapper.html' %}
+{% block title %} New topic {% endblock %}
+
+
+
+{% block content %}
+                    <div class="row">
+                        <div class="col-lg-12 boxes">
+                           <div class="row">
+                               <div class="col-lg-12 col-md-8">
+                                  <div class="box1">
+                                    <img src="{{ object.image.url }}"  alt="picture1">
+                                    <div class="contents">
+                                        <p>{{ object.time }}</p>
+                                        <p>Avtor: {{ object.author }}</p>
+                                        <h2>{{ object.name }}</h2>
+                                        <p class="three">{{ object.description }}</p>
+                                    </div>
+                                  </div>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+</section>
+{% endblock %}
+
+

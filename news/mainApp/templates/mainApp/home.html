@@ -1,0 +1,36 @@
+{% extends 'mainApp/wrapper.html' %}
+{% load static %}
+
+
+{% block content %}
+
+                               {% for category in categories %}
+                               {% for topic in topics %}
+                                      {% if topic.category == category %}
+                               <div style="text-align: center" class="warn"><button type="button" class="btn btn-outline-warning"><a href="{% url 'category' category.id %}"><h3><strong>{{ category.name }}</strong></h3></a></button></div>
+
+                               <div class="col-lg-6 col-md-4 col-sm-12 divide">
+                                  <div class="box-5">
+
+                                    <img src="{{ topic.image.url }}" width="1100" height="600" alt="picture2">
+                                    <div class="content">
+
+                                        <h4>{{ topic.name }}</h4>
+                                        <p class="one">{{ topic.description|truncatechars:70 }}</p>
+                                        <a href="{% url 'davomi' topic.id %}">Davomi  <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                        <p>{{ topic.time }}</p>
+                                        <p>Avtor: {{ topic.author }}</p>
+
+                                    </div>
+                                  </div>
+                               </div>
+                                   {% endif %}
+                                    {% endfor %}
+                                   {% endfor %}
+
+                    </div>
+</section>
+
+
+
+    {% endblock %}
